@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Solar System</title>
+<link rel="icon" type="image/x-icon" href="./images/icon_rocket.png">
+<link rel=stylesheet href="style.css">
+</head>
+<body>
+  <!-- Welcome Modal (Splash Screen) -->
+  <div id="welcome-modal" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(20,20,30,0.97);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;">
+    <div style="background:#fff;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.25);padding:2.5em 2em;max-width:400px;width:90%;display:flex;flex-direction:column;align-items:center;">
+      <h2 style="color:#1e3a8a;font-size:2.4em;margin-bottom:0.5em;text-align: center;">Welcome to Solar System Explorer!</h2>
+      <p style="color:#222;font-size:1.5em;text-align:center;margin-bottom:1.5em;">🌍✨ "The universe is full of wonders, and learning about the solar system is your first step to exploring them. Every planet, moon, and star has a story to tell—keep your curiosity alive, and you’ll discover just how amazing our cosmic neighborhood truly is!" 🚀🌌</p>
+      <button id="close-welcome" style="padding:0.7em 2em;background:#5da075;color:#fff;font-size:1.1em;border:none;border-radius:8px;cursor:pointer;transition:background 0.2s;">Go Explore</button>
+    </div>
+  </div>
+  <header style="background:#151c27;padding:0.6em;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.12);">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:1em;max-width:1200px;margin:0 auto;flex-wrap:wrap;">
+     <link rel="icon" type="image/x-icon" href="./images/icon_rocket.png">
+    <!-- Left side (badge + title) -->
+    <div style="display:flex;align-items:center;gap:1em;">
+      <span style="background:#22c55e;color:#fff;font-weight:bold;padding:0.2em 0.8em;border-radius:1em;font-size:1em;letter-spacing:1px;">INFOGRAPHICS</span>
+      <h1 style="font-family:'Arial Black',Arial,sans-serif;font-size:2em;color:#fff;margin:0;letter-spacing:1px;">Solar System Explorer</h1>
+    </div>
+
+    
+</header>
+
+  <div class="container">
+    <div class="sun">
+      <img src="./images/sun.png" alt="sun">
+    </div>
+    <div class="mercury"></div>
+    <div class="venus"></div>
+    <div class="earth">
+      <div class="moon"></div>
+    </div>
+    <div class="mars"></div>
+    <div class="jupiter"></div>
+    <div class="saturn"></div>
+    <div class="uranus"></div>
+    <div class="neptune"></div>
+    <div class="pluto"></div>
+  </div>
+  <!-- Enhanced navigation bar for planets with gradients and hover effects -->
+  <nav style="position:fixed;top:0;left:0;width:15%;height:100%;background:linear-gradient(180deg, #404247, #b9dbc6);color:white;padding:1em;box-shadow:2px 0 5px rgba(0,0,0,0.5);overflow-y:auto;border-right:3px solid #b5c2b9;">
+   <h2 style="
+  text-align:center;
+  color:#050505;
+  font-family:'Arial Black', 'Segoe UI', Tahoma, sans-serif;
+  font-size:2em;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:1em;
+  text-shadow:0 0 8px rgba(182, 212, 197, 0.8), 0 0 12px rgba(30, 58, 138, 0.8);
+">
+
+  🌍 Planets
+</h2>
+    <ul style="list-style:none;padding:0;">
+      <li style="margin:1em 0;"><button class="nav-btn" data-planet="mercury" style="width:100%;padding:0.7em;background:linear-gradient(90deg, #6f772e, #b1c251);color:white;border:none;border-radius:8px;cursor:pointer;font-size:1em;transition:transform 0.3s, box-shadow 0.3s;box-shadow:0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 8px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">Mercury</button></li>
+      <li style="margin:1em 0;"><button class="nav-btn" data-planet="venus" style="width:100%;padding:0.7em;background:linear-gradient(90deg, #cc720c, #0f5bce);color:white;border:none;border-radius:8px;cursor:pointer;font-size:1em;transition:transform 0.3s, box-shadow 0.3s;box-shadow:0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 8px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">Venus</button></li>
+      <li style="margin:1em 0;"><button class="nav-btn" data-planet="earth" style="width:100%;padding:0.7em;background:linear-gradient(90deg, #45889c, #83c3f7);color:white;border:none;border-radius:8px;cursor:pointer;font-size:1em;transition:transform 0.3s, box-shadow 0.3s;box-shadow:0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 8px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">Earth</button></li>
+      <li style="margin:1em 0;"><button class="nav-btn" data-planet="mars" style="width:100%;padding:0.7em;background:linear-gradient(90deg, #a53b37, #bd770d);color:white;border:none;border-radius:8px;cursor:pointer;font-size:1em;transition:transform 0.3s, box-shadow 0.3s;box-shadow:0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 8px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">Mars</button></li>
+      <li style="margin:1em 0;"><button class="nav-btn" data-planet="jupiter" style="width:100%;padding:0.7em;background:linear-gradient(90deg, #b6c2ba, #888b87);color:white;border:none;border-radius:8px;cursor:pointer;font-size:1em;transition:transform 0.3s, box-shadow 0.3s;box-shadow:0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 8px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">Jupiter</button></li>
+      <li style="margin:1em 0;"><button class="nav-btn" data-planet="saturn" style="width:100%;padding:0.7em;background:linear-gradient(90deg, #fcfcfc, #585858);color:white;border:none;border-radius:8px;cursor:pointer;font-size:1em;transition:transform 0.3s, box-shadow 0.3s;box-shadow:0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 8px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">Saturn</button></li>
+      <li style="margin:1em 0;"><button class="nav-btn" data-planet="uranus" style="width:100%;padding:0.7em;background:linear-gradient(90deg, #4ad9de, #64d8ec);color:white;border:none;border-radius:8px;cursor:pointer;font-size:1em;transition:transform 0.3s, box-shadow 0.3s;box-shadow:0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 8px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">Uranus</button></li>
+  <li style="margin:1em 0;"><button class="nav-btn" data-planet="neptune" style="width:100%;padding:0.7em;background:linear-gradient(90deg, #4ade80, #1e3a8a);color:white;border:none;border-radius:8px;cursor:pointer;font-size:1em;transition:transform 0.3s, box-shadow 0.3s;box-shadow:0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 8px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">Neptune</button></li>
+  <li style="margin:1em 0;"><button class="nav-btn" data-planet="pluto" style="width:100%;padding:0.7em;background:linear-gradient(90deg, #b1b1b1, #925126);color:white;border:none;border-radius:8px;cursor:pointer;font-size:1em;transition:transform 0.3s, box-shadow 0.3s;box-shadow:0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 8px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">Pluto</button></li>
+    </ul>
+  </nav>
+    <div id="trivia-modal" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%, -50%);background:rgba(0,0,0,0.8);align-items:center;justify-content:center;z-index:200;">
+      <div style="background:#ffffff;padding:2em;border-radius:12px;max-width:400px;width:90%;">
+        <h3 id="trivia-title">Planet</h3>
+        <p id="trivia-content"><strong>Trivia:</strong> No trivia available.</p>
+        <button id="quiz-btn" style="margin-top:1em;padding:10px 20px;background-color:#4ade80;color:white;border:none;border-radius:5px;cursor:pointer;transition:background-color 0.3s;">Take Quiz</button>
+        <button style="margin-top:1em;" onclick="document.getElementById('trivia-modal').style.display='none'">Close</button>
+      </div>
+    </div>
+      <footer style="background:#151c27;color:#fff;text-align:center;padding:0.4em 0 0.4em 0;position:fixed;bottom:0;width:100%;font-family:'Arial',sans-serif;font-size:1em;box-shadow:0 -2px 8px rgba(0,0,0,0.12);border-top:1px solid #232b39;z-index:100;margin-left:480px;">
+    <span style="color:#b3b9c9;">2025 Solar System Explorer. Educational content for astronomy enthusiasts. </span>
+    <a href="https://www.nasa.gov/"  target="_blank" style="color:#4ade80;text-decoration:underline;">©NASA</a>
+    <a href="https://chatgpt.com/"  target="_blank" style="color:#4ade80;text-decoration:underline;">©ChatGPT AI</a>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    // Hide welcome modal on button click
+    document.addEventListener('DOMContentLoaded', function() {
+      var closeBtn = document.getElementById('close-welcome');
+      if (closeBtn) {
+        closeBtn.onclick = function() {
+          document.getElementById('welcome-modal').style.display = 'none';
+        };
+      }
+    });
+  </script>
+</body>
+
+</html>
